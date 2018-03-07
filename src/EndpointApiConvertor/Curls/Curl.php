@@ -1,13 +1,14 @@
 <?php
 
-/**
-* 
-*/
+namespace EndpointApiConvertor\Curls;
+
+use Exception;
+
 class Curl
 {
 	private $url;
 
-	function __construct ($url)
+	function __construct (string $url)
 	{
 		if (!isset($url) && empty($url)) {
 			throw new Exception( 'Please set the API url.' );
@@ -15,14 +16,15 @@ class Curl
 		$this->url = $url;
 	}
 	
-	public function getJson()
+	public function getDecodeJson()
 	{
 		try {
 			$ch = curl_init();
 			curl_setopt($ch,CURLOPT_URL,$this->url);
 			curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-			
-			return curl_exec($ch);
+
+			return json_decode(curl_exec($ch));
+
 		}
 		catch(Throwable $e) {
             throw new Exception( $e->getMessage() );

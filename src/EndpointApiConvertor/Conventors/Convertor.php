@@ -1,15 +1,22 @@
-<?php
+<?php 
+
+namespace EndpointApiConvertor\Convertors;
+
+use Exception;
+
 class Convertor {
 
-    public function convertArrayToCsv($request)
+    public function convertArrayToCsv(array $request, $fileDir) : void
     {
         try{
             if (!is_array($request)) {
                 throw new Exception( 'The request has some issues.' );
             }
 
+            // $fileDir = __DIR__ . '/../../../public/csv/file.csv';
             $delimiter = ';';
-			$file= fopen('./csv/file.csv', 'w');
+
+			$file = fopen($fileDir, 'w');
 			$condition = true;
 			foreach ($request as $fields) {
 				if ($condition) {
@@ -23,7 +30,7 @@ class Convertor {
             throw new Exception( $e->getMessage() );
         }
         finally {
-            if (file_exists('./csv/file.csv') && isset($file))
+            if (file_exists($fileDir) && isset($file))
                 fclose($file);
         }
     } 
