@@ -19,6 +19,8 @@ chmod -R 777 public/
 In Terminal
 
 ```
+composer install
+
 php index.php
 
 ```
