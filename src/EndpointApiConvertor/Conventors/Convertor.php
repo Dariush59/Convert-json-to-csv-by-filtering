@@ -42,7 +42,7 @@ class Convertor {
             if ( file_exists( $this->fileDir ) && isset( $file ))
                 fclose( $file );
         }
-    } 
+    }
 }
 
 ?>
