@@ -6,7 +6,7 @@ Create one easy and clean program how will be able to read the API Endpoint - ht
 3. The result should be stored in one csv file with ; like column separator.
 
 
-** NOTE:**
+**NOTE:**
 Get full permission to the public folder
 
 ```
