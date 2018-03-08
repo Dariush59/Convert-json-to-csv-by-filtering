@@ -24,23 +24,23 @@ class Convertor {
             $delimiter = ';';
             $condition = true;
 
-			$file = fopen( $this->fileDir, 'w' );
-			foreach ( $request as $fields ) {
-				
-                if ( $condition ) {
-					fputcsv( $file, array_keys( $fields ), $delimiter );
-					$condition = false;
-				}
+            $file = fopen( $this->fileDir, 'w' );
+            foreach ( $request as $fields ) {
 
-				fputcsv( $file, $fields, $delimiter );
-			}
+                if ( $condition ) {
+                    fputcsv( $file, array_keys( $fields ), $delimiter );
+                    $condition = false;
+                }
+
+                fputcsv( $file, $fields, $delimiter );
+            }
         }
         catch( Throwable $e ) {
             throw new Exception( $e->getMessage() );
         }
         finally {
             if ( file_exists( $this->fileDir ) && isset( $file ))
-                fclose( $file );
+            fclose( $file );
         }
     }
 }
