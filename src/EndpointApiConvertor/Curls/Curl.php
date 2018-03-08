@@ -12,11 +12,11 @@ class Curl
 	{
 		if (!isset( $url ) && empty( $url )) 
 			throw new Exception( 'Please set the API url.' );
-		
+
 		$this->url = $url;
 	}
 
-	
+
 	public function getDecodeJson() : array
 	{
 		try {
@@ -28,8 +28,8 @@ class Curl
 
 		}
 		catch( Throwable $e ) {
-            throw new Exception( $e->getMessage() );
-        }
+			throw new Exception( $e->getMessage() );
+		}
 	}
 }
 

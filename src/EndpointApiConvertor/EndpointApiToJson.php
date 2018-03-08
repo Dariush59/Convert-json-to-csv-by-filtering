@@ -24,13 +24,10 @@ class EndpointApiToJson
 			$status 			= $convertor->convertArrayToCsv( $filteredProducts  );
 
 			header('Location: ./public/csv/file.csv');
-
 		}
 		catch(Throwable $e){
 			echo '<h3 style="color: red; text-align: center">' . $e->getMessage() . '</h3>';
 		}
-		
-		
 	}
 	
 }
