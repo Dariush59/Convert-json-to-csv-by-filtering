@@ -26,7 +26,6 @@ class Filter
 		try{
 			if ( !isset( $resources['product_availabilities'] )) 
 				throw new Exception( 'Product availabilities request has some issues.' );
-			
 
 			foreach ( $resources['product_availabilities'] as $products ) {
 				$list = [];
@@ -44,12 +43,10 @@ class Filter
 			}
 
 			return $filteredProducts;
-		
 		} 
 		catch( Throwable $e ){
 			throw new Exception( $e->getMessage() );
 		}
-		
 	}
 	
 

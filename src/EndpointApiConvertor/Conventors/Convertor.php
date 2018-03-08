@@ -8,7 +8,6 @@ class Convertor {
 
     protected $fileDir = '';
 
-
     function __construct( string $fileDir )
     {
         $this->fileDir = $fileDir;
@@ -26,7 +25,6 @@ class Convertor {
             $condition = true;
 
 			$file = fopen( $this->fileDir, 'w' );
-			
 			foreach ( $request as $fields ) {
 				
                 if ( $condition ) {

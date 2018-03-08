@@ -8,12 +8,12 @@ class ConvertorTest extends TestCase
     public function testConvertoHasToTrue()
     {
     	$emess = NULL;
-    	$fileDir   = __DIR__ . '/../../public/csv/file.csv';
+    	$fileDir = __DIR__ . '/../../public/csv/file.csv';
         try {
         	$convertor = new Convertor( $fileDir );
 			$convertor->convertArrayToCsv( [] );   
         } catch (Throwable $e) { $emess = $e->getMessage(); }
-        $this->assertEquals($emess, 'There is no result.');
+        $this->assertEquals( $emess, 'There is no result.' );
     }
 }
 

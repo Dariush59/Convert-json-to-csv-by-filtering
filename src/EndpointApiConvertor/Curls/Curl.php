@@ -8,7 +8,6 @@ class Curl
 {
 	protected $url = '';
 
-
 	function __construct ( string $url )
 	{
 		if (!isset( $url ) && empty( $url )) 
